@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+
+{%block title%}Contact{%endblock title%}
+
+{%block body%}
+<div class='container-fluid my-4 px-0'>
+<img src="https://media.istockphoto.com/id/1168945108/photo/close-up-image-of-male-hands-using-smartphone-with-icon-telephone-email-mobile-phone-and.jpg?s=612x612&w=0&k=20&c=aVojLzP1n3XNxuRdy7Pqdzo6OyRAVanOWDUWjbu3R8Q=" style="height:350px;" class="d-block w-100" alt="...">
+</div>
+<h1 style="position:absolute; top:419px; left:329px; font-weight:bold;"class="my-3">Contact Us</h1>
+
+<div class='container'>
+    <form style="top: 23px;position: relative;" method='post',action='/contact'>{% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name='name'placeholder="enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name='email'placeholder="Enter your email address">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="phone" class="form-control" id="phone" name='phone'placeholder="enter your phone number">
+          </div>
+        <div class="form-group">
+          <label for="desc">What you want to contact me for</label>
+          <textarea class="form-control" id="desc" rows="3" name='desc'></textarea>
+        </div>
+        <button type="submit" class="btn btn-success" >Submit</button>
+      </form>
+    </div>
+
+{%endblock body%}
